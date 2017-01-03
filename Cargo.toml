@@ -1,0 +1,8 @@
+[package]
+name = "sanity"
+version = "0.1.0"
+authors = ["Jason Yeo <jasonyeo88@gmail.com>"]
+
+[dependencies]
+yaml-rust = "0.3.5"
+ansi_term = "0.9"
