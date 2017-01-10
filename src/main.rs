@@ -32,7 +32,7 @@ fn main() {
 
     for &phase in phases.iter() {
         let value = &doc[phase];
-        if value.is_null() {
+        if value.is_null() || value.is_badvalue() {
             continue;
         }
 
@@ -40,7 +40,7 @@ fn main() {
         let commands = match *value {
             yaml_rust::yaml::Yaml::String(ref s) => vec!(s.as_str()),
             yaml_rust::yaml::Yaml::Array(ref a) => a.iter().map(|x| x.as_str().unwrap()).collect(),
-            _ => panic!("String expected for phase: {}", phase),
+            _ => panic!("String expected for {} phase, but got {:?}", phase, value),
         };
 
         for full_cmd in commands.iter() {

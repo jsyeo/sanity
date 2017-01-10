@@ -1,6 +1,2 @@
-syntax: echo "second syntax"
 lint: echo "linting"
-unit: echo "woohoo unit tests"
-functional: echo "woohoo functional tests"
-security: echo "woohoo sakurity"
 
