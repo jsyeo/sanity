@@ -15,11 +15,12 @@ const CONFIG_PATH: &'static str = ".sanity.yml";
 const EMPTY_CONFIG: &'static str =
 "\
 # Define commands and phases to be ran as part of your project's CI/CD workflow. Currently,\n\
-# there are 5 phases: syntax, lint, unit, functional , and security. sanity will run them in\n\
-# that order and fails if any of the commands fails. \n\
+# there are 6 phases: install, syntax, lint, unit, functional, and security. sanity will run\n\
+# them in that order and fails if any of the commands fails. \n\
 #\n\
 # Ruby project example:\n\
 #\n\
+# install: bundle install\n\
 # syntax:\n\
 #   - rubocop\n\
 #   - reek\n\
@@ -47,7 +48,6 @@ fn main() {
         exit(0);
     }
 
-
     let mut file = match File::open(&path) {
         Err(why) => panic!("Couldn't open {:?} because {}", &path, why.description()),
         Ok(file) => file,
@@ -63,7 +63,7 @@ fn main() {
 
     let doc = &docs[0];
 
-    let phases = ["syntax", "lint", "unit", "functional", "security"];
+    let phases = ["install", "syntax", "lint", "unit", "functional", "security"];
 
     for &phase in phases.iter() {
         let value = &doc[phase];
