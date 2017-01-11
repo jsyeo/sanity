@@ -27,6 +27,7 @@ const EMPTY_CONFIG: &'static str =
 # unit: rspec\n\
 # security: brakeman\n\
 \n\
+install: \n\
 syntax:\n\
 lint:\n\
 unit:\n\
