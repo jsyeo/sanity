@@ -49,7 +49,7 @@ fn main() {
     }
 
     if !path.exists() {
-        println!("{}", Red.paint(format!("{} does not exists, try running `sanity init`", CONFIG_PATH)));
+        println!("{}", Red.paint(format!("{} does not exist, try running `sanity init`", CONFIG_PATH)));
         exit(1);
     }
 
