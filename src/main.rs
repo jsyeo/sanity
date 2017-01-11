@@ -48,6 +48,11 @@ fn main() {
         exit(0);
     }
 
+    if !path.exists() {
+        println!("{}", Red.paint(format!("{} does not exists, try running `sanity init`", CONFIG_PATH)));
+        exit(1);
+    }
+
     let mut file = match File::open(&path) {
         Err(why) => panic!("Couldn't open {:?} because {}", &path, why.description()),
         Ok(file) => file,
