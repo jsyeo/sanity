@@ -20,10 +20,10 @@ that you wish to run.
 sanity init
 ```
 
-Once you have defined the commands that you want to run, execute `sanity` run
-them.
+Once you have defined the commands that you want to run, execute `sanity` to
+run them.
 
-## Example `.sanity.yml` File
+## Example `.sanity.yml` Files
 
 ### JavaScript
 
